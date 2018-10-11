@@ -1,3 +1,10 @@
+/***
+ * Parser  Module 
+ * parser.c implementation of library.
+ * Created By : Amr Elzawawy
+ * Created On : 10-10-18
+ ***/
+
 #include "parser.h"
 #include "string.h"
 #include <stdlib.h>

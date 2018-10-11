@@ -5,5 +5,9 @@
  ***/
 
 #include "shell.h"
+#include <stdio.h>
+void openShellSession(void) 
+{
+    
 
-void openShellSession(void);
+}

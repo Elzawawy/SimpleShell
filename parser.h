@@ -1,5 +1,6 @@
 /***
- * parser.h library for parsing any string into tokens according to a token splitter.
+ * Parser  Module 
+ * parser.h library for parsing any string into tokens.
  * Created By : Amr Elzawawy
  * Created On : 10-10-18
  ***/

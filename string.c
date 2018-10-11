@@ -1,3 +1,10 @@
+/***
+ * String  Module 
+ * string.c library implementation.
+ * Created By : Amr Elzawawy
+ * Created On : 10-10-18
+ ***/
+
 #include "string.h"
 
 int getStringLength(char * s){
