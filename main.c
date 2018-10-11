@@ -12,14 +12,12 @@
 #include "parser.h"
 void main(void)
 {
-    char *args[64];
+    char *args[20];
+    printf(">>");
     char * command = (char *) malloc(50*sizeof(char));
-    command = "ls -l";
-    //printf("%d",1);
-    //parseCommand(command,args);
+    fgets(command,50,stdin);     
     parseLine(command, args);
    int res = execvp(*args, args);
-   printf("%d",res);
     
 
 }

@@ -23,3 +23,10 @@ void appendCharToString(char *s, char c)
     s[len] = c;
     s[len + 1] = '\0';
 }
+
+void removeNewLineChar(char *s)
+{
+    int new_line = getStringLength(s) -1;
+    if (s[new_line] == '\n')
+        s[new_line] = '\0';
+}
