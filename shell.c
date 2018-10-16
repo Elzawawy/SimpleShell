@@ -31,8 +31,8 @@ void executeCommand(char ** args)
 }
 void openShellSession(void) 
 {
-    char *args[MAX_ARGUMENTS_NUM];
-    char * command = (char *) malloc(MAX_COMMAND_LENGTH*sizeof(char));
+    char ** args = (char **) malloc(MAX_ARGUMENTS_NUM * sizeof(char*));
+    char * command = (char *) malloc(MAX_COMMAND_LENGTH * sizeof(char));
     printf(">>");
     fgets(command,MAX_COMMAND_LENGTH,stdin); 
     removeLastChar(command);
@@ -44,4 +44,7 @@ void openShellSession(void)
         parseLine(command,args);
     //Execute the command according to the last argument specified ( Background Or Foreground ).
     executeCommand(args);
+    //Free up the memory created by the Shell.
+    free(args);
+    free(command);
 }
