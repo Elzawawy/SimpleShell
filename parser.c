@@ -8,7 +8,6 @@
 #include "parser.h"
 #include "string.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 int parseLine(char *Line, char **Tokens)
 {   //Check Input Parameters Validity.
@@ -17,7 +16,6 @@ int parseLine(char *Line, char **Tokens)
         int Local_separtorFlag = 0;
         //Allocate Memory for tokens according to user configurable input.
         *Tokens = (char *)malloc(MAX_TOKEN_LENGTH * sizeof(char));
-        removeNewLineChar(Line);
         while (*Line != '\0')
         {
             if (*Line != TOKEN_SEPARATOR )
@@ -39,7 +37,7 @@ int parseLine(char *Line, char **Tokens)
             Line++;
         }
         //Append last argument with null termination.
-        *++Tokens = '\0';
+        *(++Tokens) = '\0';
         // "0" indicating normal operation.
         return 0;
     }

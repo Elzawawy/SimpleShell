@@ -7,4 +7,6 @@
 
 int getStringlength(char * s);
 void appendCharToString(char *s, char c);
-void removeNewLineChar(char *s);
+void removeLastChar(char *s);
+int stringCompare( char *s1, char *s2 );
+char * concatString(char *destination, const char *source, int num);

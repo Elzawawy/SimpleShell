@@ -6,7 +6,6 @@
  ***/
 
 #define MAX_TOKEN_LENGTH 20
-#define MAX_TOKENS_NUM 64
 #define TOKEN_SEPARATOR ' '
 
 int parseLine(char * Line,char ** Tokens);

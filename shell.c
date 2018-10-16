@@ -9,12 +9,20 @@
 #include "shell.h"
 #include "parser.h"
 #include "process.h"
+#include "string.h"
+
 void executeCommand(char ** args)
 {
+    char ** temp_args = args;
     int Local_backgroundProcessFlag = 0;
-    while( *args != '\0')
-        if(*args == '&')
-            Local_backgroundProcessFlag=1;
+    while( *temp_args != '\0') {
+        if(stringCompare(*temp_args,"&") == 0 ){
+             Local_backgroundProcessFlag = 1;
+             *temp_args = '\0';
+        }
+           
+        temp_args++;
+    } 
     if(Local_backgroundProcessFlag)
         newBackgroundProcess(args);
     else 
@@ -23,13 +31,14 @@ void executeCommand(char ** args)
 }
 void openShellSession(void) 
 {
-    char *args[MAX_TOKENS_NUM];
-    printf(">>");
+    char *args[MAX_ARGUMENTS_NUM];
     char * command = (char *) malloc(MAX_COMMAND_LENGTH*sizeof(char));
+    printf(">>");
     fgets(command,MAX_COMMAND_LENGTH,stdin); 
+    removeLastChar(command);
     if(command == NULL )
         openShellSession();
-    else if(command == "exit")
+    else if(stringCompare(command,"exit") == 0)
         exit(0);
     else
         parseLine(command,args);

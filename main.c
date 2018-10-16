@@ -12,12 +12,15 @@
 #include "parser.h"
 void main(void)
 {
-    char *args[20];
-    printf(">>");
-    char * command = (char *) malloc(50*sizeof(char));
-    fgets(command,50,stdin);     
-    parseLine(command, args);
-   int res = execvp(*args, args);
-    
+//     char *args[20];
+//     printf(">>");
+//     char * command = (char *) malloc(50*sizeof(char));
+//     fgets(command,50,stdin);     
+//     parseLine(command, args);
+//    int res = execvp(*args, args);
+while(1)
+{
+    openShellSession();
+}
 
 }
