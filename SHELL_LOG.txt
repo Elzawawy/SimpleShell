@@ -1,1 +1,1 @@
--------------------- LOG FILE FOR LOGGING CHILD PROCESSES -------------------- 
+-------------------- LOG FILE FOR LOGGING CHILD PROCESSES --------------------
