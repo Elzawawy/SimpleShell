@@ -7,6 +7,7 @@
 
 #include "string.h"
 #include <stdlib.h>
+#include <stdio.h>
 int getStringLength(char * s){
     int stringlength=0;
     while( *s != '\0')
@@ -40,23 +41,6 @@ int stringCompare( char *s1, char *s2 )
     return ( *p1 > *p2 ) - ( *p2  > *p1 );
 }
 
-// char* concatString(char *dst, char *src)
-// {
-//     char * s1 = (char *) malloc((getStringLength(dst)+getStringLength(src))*sizeof(char));
-//     s1 = dst;
-//     char * s2 = src;
-//     if( *dst == '\0' || *src == '\0' )
-//         return dst;
-//     while(*s1 != '\0')
-//         s1++;
-//     while(*s2 != '\0')
-//         *s1++ = *s2++;
-    
-//     *s1 = '\0';
-//     return s1;
-
-// }
-
 // Function to implement strncat() function in C
 char* concatString(char* destination, const char* source, int num)
 {
@@ -73,4 +57,29 @@ char* concatString(char* destination, const char* source, int num)
 
 	// destination string is returned by standard strncat()
 	return ptr;
+}
+
+int getSArrayLength(char ** arr)
+{
+    int len=0;
+    while( *arr != 0)
+    {
+        len++;
+        arr++;
+    }
+    return len;
+}
+
+void printSArray(char ** arr)
+{
+    while( *arr != 0)
+    {
+        printf("%s\n",*arr);
+        arr++;
+    }
+}
+
+void printString(char * s)
+{
+    printf("%s\n",s);
 }

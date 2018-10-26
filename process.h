@@ -5,5 +5,13 @@
  * Created On : 11-10-18
  ***/
 
-void newBackgroundProcess(char ** args);
-void newForegroundProcess(char ** args);
+#ifndef POCESS_H_
+#define POCESS_H_
+
+/* Input : Arguments of the command, Type of the Child process to create.
+            (Foreground --> 0 , Background ---> 1)
+   Output : N/A
+   Function : creates a new child process based on inputs. */
+void newChildProcess(char** args, int Copy_BackgroundFlag);
+
+#endif
